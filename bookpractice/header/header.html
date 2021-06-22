@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Document</title>
+
+    <style>
+      .submit-section {
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .inputname {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #crazy {
+        color: #8a2be2;
+        font-size: 40px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .crazybutton {
+        color: border;
+        background-color: rgb(138, 243, 138);
+        border-radius: 10px;
+        border: cornflowerblue 2px solid;
+        padding: 7px;
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: bold;
+        font-size: large;
+      }
+      .greets {
+        color: darkolivegreen;
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-weight: 800;
+        margin-right: 5px;
+      }
+      #greettext {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="submit-section">
+        <input class="inputname" name="name" type="text" id="entername" placeholder="first write your name here " onkeyup="success() " />
+        <button id="button" class="crazybutton" type="submit" onclick="namesubmit(), himessage(),showDiv()" disabled>submit</button>
+
+        <div style="display: flex; flex-direction: row; justify-content: center">
+          <p class="greets" id="para"></p>
+
+          <p class="greets" id="display"></p>
+        </div>
+      </div>
+      <div id="greettext">
+        <div id="crazy">This is crazy</div>
+        <div id="wannaknow" style="font-size: 20px; color: crimson; text-align: center">Wanna know more ??</div>
+        <div style="display: flex; justify-content: center; align-items: center">
+          <button class="crazybutton" style="margin-top: 10px" onclick="crazy(), wannaknow(), style.display = 'none'">Click_me</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function namesubmit() {
+        // var message = document.getElementById('entername').value;
+        // display.innerHTML = message;
+
+        document.getElementById('display').innerHTML = document.getElementById('entername').value;
+      }
+      function showDiv() {
+        div = document.getElementById('greettext');
+        div.style.display = 'block';
+      }
+      function himessage() {
+        document.getElementById('para').innerHTML = 'Hi!  ';
+      }
+      function crazy() {
+        document.getElementById('crazy').innerHTML = 'You are crazier';
+      }
+      function wannaknow() {
+        document.getElementById('wannaknow').innerHTML = 'haha! Gotchaa!!';
+      }
+
+      function success() {
+        if (document.getElementById('entername').value === '') {
+          document.getElementById('button').disabled = true;
+        } else {
+          document.getElementById('button').disabled = false;
+        }
+      }
+    </script>
+  </body>
+</html>

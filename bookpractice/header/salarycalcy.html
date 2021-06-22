@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
+      integrity="undefined"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+
+    <title>Document</title>
+
+    <style>
+      body {
+        background-image: url('salbg.jpg');
+      }
+      #container {
+        width: 30%;
+        margin-top: 50px;
+      }
+      @media (max-width: 768px) {
+        #container {
+          width: 40%;
+        }
+      }
+      @media (max-width: 640px) {
+        #container {
+          width: 40%;
+        }
+      }
+      @media (max-width: 480px) {
+        #container {
+          width: 40%;
+        }
+      }
+      @media (max-width: 420px) {
+        #container {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="container" class="container">
+        <div class="mb-3">
+          <input id="totalsal" type="number" class="form-control" placeholder="enter salary" />
+        </div>
+        <div class="mb-3">
+          <input id="days" type="number" class="form-control" placeholder="days" />
+        </div>
+
+        <button id="findsal" onclick="salary(),clearfields()" class="btn btn-primary">Submit</button>
+        <div class="mb-3">
+          <input readonly="readonly" style="margin-top: 10px" id="result" type="text" class="form-control" placeholder="result" />
+        </div>
+      </div>
+    </div>
+    <!--
+    <div>
+      <input type="number" id="totalsal" />
+      <input type="number" id="days" />
+      <button id="findsal" onclick="salary()">find</button>
+
+      <input type="text" id="result" />
+    </div> -->
+
+    <script>
+      //   function salary() {
+      //     var totalsalary = document.getElementById('totalsal');
+      //     var actualdays = document.getElementById('days');
+      //     var perdaysal;
+
+      //     perdaysal = totalsalary / 30;
+
+      //     result = perdaysal * actualdays;
+      //     return result;
+      //   }
+
+      function salary() {
+        var totalsalary = parseInt(document.getElementById('totalsal').value);
+        var actualdays = parseInt(document.getElementById('days').value);
+
+        var perdaysal;
+
+        perdaysal = totalsalary / 30;
+
+        result = perdaysal * actualdays;
+
+        document.getElementById('result').value = result;
+      }
+
+      function clearfields() {
+        document.getElementById('totalsal').value = '';
+        document.getElementById('days').value = '';
+      }
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
